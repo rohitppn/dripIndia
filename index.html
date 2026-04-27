@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DripIndia — Daily Fashion Loot Curated for India</title>
+<meta name="description" content="DripIndia curates the hottest fashion deals from Myntra, Ajio, Meesho, Flipkart, Amazon and more — delivered daily to our community on Telegram, Pinterest, and Instagram.">
+<meta property="og:title" content="DripIndia — Daily Fashion Loot">
+<meta property="og:description" content="Curated fashion deals up to 90% off, delivered daily.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --fg: #f5f5f7;
+    --muted: #a8a8b0;
+    --accent: #ff2e88;
+    --accent-2: #ffd24d;
+    --card: #18181b;
+    --border: #2a2a2f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    position: sticky; top: 0;
+    background: rgba(13, 13, 15, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+  }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+  nav ul a { color: var(--muted); font-size: 14px; }
+  nav ul a:hover { color: var(--fg); }
+
+  /* hero */
+  .hero { padding: 96px 0 64px; }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 24px;
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.lead {
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 0 40px;
+  }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .badge {
+    padding: 6px 14px; border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 24px; border-radius: 12px;
+    font-weight: 600; font-size: 15px;
+    transition: transform 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-secondary { background: var(--card); color: var(--fg); border: 1px solid var(--border); }
+
+  /* sections */
+  section { padding: 72px 0; border-top: 1px solid var(--border); }
+  section h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  section p.section-lead { color: var(--muted); font-size: 17px; max-width: 640px; margin: 0 0 40px; }
+
+  /* grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .card h3 {
+    margin: 0 0 12px;
+    font-size: 18px;
+  }
+  .card p { color: var(--muted); margin: 0; font-size: 15px; }
+  .card .icon {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border-radius: 10px;
+    display: grid; place-items: center;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  /* socials */
+  .socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .social-pill {
+    padding: 10px 18px; border-radius: 999px;
+    background: var(--card); border: 1px solid var(--border);
+    font-size: 14px; color: var(--fg);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0 60px;
+    color: var(--muted); font-size: 14px;
+  }
+  footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Drip<span>India</span></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#what">What we do</a></li>
+      <li><a href="#follow">Follow</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="badges">
+      <div class="badge">🇮🇳 Made for India</div>
+      <div class="badge">⚡ Daily drops</div>
+      <div class="badge">🛍 50–90% off</div>
+    </div>
+    <h1>India's hottest <span class="accent">fashion loot</span><br>delivered daily.</h1>
+    <p class="lead">
+      We hunt the best fashion deals across Myntra, Ajio, Meesho, Flipkart and Amazon — then drop them straight into our community on Telegram, Pinterest and Instagram. Hand-picked, women's & men's, up to 90% off.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://t.me/dripindia_official">Join Telegram channel →</a>
+      <a class="btn btn-secondary" href="#about">Learn more</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2>About DripIndia</h2>
+    <p class="section-lead">
+      DripIndia is an independent fashion deals community for India. We help shoppers find genuinely good discounts on women's and men's clothing, footwear, watches, bags and accessories — without doom-scrolling through retailer apps.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>Curated, not spam</h3>
+        <p>We post hand-picked deals with real discounts (typically 50–90% off MRP) — not every flat sale.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🇮🇳</div>
+        <h3>India-first</h3>
+        <p>Brands and prices that matter to Indian shoppers — Myntra, Ajio, Meesho, Flipkart, Amazon, Snapdeal.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Where you already are</h3>
+        <p>Deals delivered to Telegram (live), Pinterest (browseable), Instagram (visual). Your choice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="container">
+    <h2>What we do on Pinterest</h2>
+    <p class="section-lead">
+      We publish curated pins of fashion products on sale, organized into category boards (Women's Fashion, Men's Fashion, Footwear, Bags & Accessories). Each pin links to the retailer's product page so users can shop directly. We use the Pinterest API to publish our daily curation efficiently and to keep our boards fresh.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">📌</div>
+        <h3>Daily curated pins</h3>
+        <p>~20–30 fresh pins per day across category boards, with deal price, category, and retailer link.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🗂</div>
+        <h3>Organized boards</h3>
+        <p>Pins are sorted into clear, niche boards so users can browse the styles they care about.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔗</div>
+        <h3>Direct retailer links</h3>
+        <p>Pins link straight to the product page on the original retailer. We don't intercept the user.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="follow">
+  <div class="container">
+    <h2>Follow DripIndia</h2>
+    <p class="section-lead">Pick your platform — same curation, different formats.</p>
+    <div class="socials">
+      <a class="social-pill" href="https://t.me/dripindia_official">📨 Telegram · @dripindia_official</a>
+      <a class="social-pill" href="#">📌 Pinterest · DripIndia</a>
+      <a class="social-pill" href="#">📷 Instagram · @dripindia</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 DripIndia. An independent affiliate publisher.</div>
+    <div>
+      <a href="privacy.html">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:dripindia.support@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
